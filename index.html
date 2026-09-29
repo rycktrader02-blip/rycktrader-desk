@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>RyckTrader v52</title>
+<link rel="manifest" href="manifest.webmanifest"/>
+<meta name="theme-color" content="#070b14"/>
+<style>body{margin:0;background:#070b14;color:#9ecbff;font-family:sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center}</style>
+</head>
+<body>
+<div id="boot">Abrindo RyckTrader v52…</div>
+<script>
+(async function(){
+  try{
+    const parts = await Promise.all(["p1.txt","p2.txt","p3.txt"].map(f=>fetch(f,{cache:"no-store"}).then(r=>r.text())));
+    document.open();
+    document.write(parts.join(""));
+    document.close();
+  }catch(e){
+    document.getElementById("boot").textContent = "Falha ao carregar o desk. Atualize a pagina.";
+  }
+})();
+if("serviceWorker" in navigator) navigator.serviceWorker.register("rycktrader-sw.js").catch(()=>{});
+</script>
+</body>
+</html>
