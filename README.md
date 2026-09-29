@@ -1,2 +1,2 @@
-# rycktrader-desk
-RyckTrader FOX VEX PWA v52
+# RyckTrader
+Desk FOX + VEX INVEST v52
